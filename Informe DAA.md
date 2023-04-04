@@ -34,7 +34,7 @@ Una primera idea para atacar el problema pasa por generar todas las cadenas $S$ 
 
 Como la cadena a formar debe ser balanceada, una mejora al algoritmo anterior consta de formar solo aquellas cadenas balanceadas e ir comprobando si alguna contiene a las dadas como subsecuencia no necesariamente continua. Para una cadena de tamaño $2*n$ deben existir $n$ paréntesis abiertos y la misma cantidad de cerrados, pues es condición necesaria para que una cadena este balanceada. Luego basado en la idea anterior agregamos la siguiente poda:
 
-Coloco $($ cada vez que pueda hacerlo, esto sucede cuando el número de abiertos es menor que $n$ y coloco $)$  solamente cuando el número de cerrados colocados es menor que el número de abiertos colocados. 
+Coloco $'('$ cada vez que pueda hacerlo, esto sucede cuando el número de abiertos es menor que $n$ y coloco $')'$  solamente cuando el número de cerrados colocados es menor que el número de abiertos colocados. 
 
 Con esas dos ideas fundamentales se contruyó el algoritmo tipo backtraking para saber dado un $n$ (número de paréntesis abiertos y cerrados) cuantas cadenas de tamaño $2*n$ balanceadas existan. Es conocido que este número es coincidente con el número de Catalán en $n$  (a partir de ahora $C(n)$). Por tanto existen $C(n)$  cadenas válidas por lo que la complejidad de este  código sería $O(C(n))$ y $O((2n)!/{((n+1)!*n!)})$  si se desarrolla $C(n)$.   
 
