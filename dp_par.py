@@ -4,18 +4,20 @@ STRING_B = "())))"
 
 def solve(str1, str2):
     INF = 1000
-    dp = [[[INF] * 310 for _ in range(310)] for _ in range(310)]
-    prv = [[[None] * 310 for _ in range(310)] for _ in range(310)]
-    dp[0][0][0] = 0
-
     len_str1 = len(str1)
     len_str2 = len(str2)
+    max_k = max(len_str1,len_str2) + 10
+    dp = [[[INF] * max_k for _ in range(max_k)] for _ in range(max_k)]
+    prv = [[[None] * max_k for _ in range(max_k)] for _ in range(max_k)]
+    dp[0][0][0] = 0
+
+    
 
     str1 += "#"
     str2 += "#"
     for i in range(len_str1 + 1):
         for j in range(len_str2 + 1):
-            for k in range(301):
+            for k in range(max(len_str1,len_str2)+1):
                 # add "("
                 k2 = k + 1
                 i2 = i
@@ -27,7 +29,7 @@ def solve(str1, str2):
                 if dp[i2][j2][k2] > dp[i][j][k] + 1:
                     dp[i2][j2][k2] = dp[i][j][k] + 1
                     prv[i2][j2][k2] = (i, j, k)
-            for k in range(1, 301):
+            for k in range(1, max(len_str1,len_str2)+1):
                 # add ")"
                 k2 = k - 1
                 i2 = i
