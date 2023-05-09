@@ -8,24 +8,14 @@
 
 ## El problema:
 
-Alejandra está comenzando a quedarse dormida en mitad de un turno de `**censura**`. La verdad es que ya conoce todo el contenido de la conferencia, pero no quiere cerrar los ojos y herir los sentimientos del profesor. Así que, para dejar que su mente se entretenga en algo, comienza a imaginar clones de Josué y Karel, colocados uno al lado del otro formando una lista. La imaginación de Alejandra es tan poderosa que empieza a realizar el siguiente proceso: Primero imagina dos listas cualesquiera de Josués y Karels. Luego trata de imaginar una tercera lista tal que las dos primeras son sublistas no necesariamente continuas de esta y que además esté balanceada.
 
-Alejandra define una lista de Josués y Karels balanceada como una lista que cumple lo siguiente:
 
-- Una lista formada por sólo un josué y un karel, en ese orden, está balanceada.
+Un día iba David por su facultad cuando ve un cuadrado formado por  cuadraditos de color blanco. A su lado, un mensaje ponía lo siguiente: "Las siguientes tuplas de la forma x1 , y1 , x2 , y2 son coordenadas para pintar de negro algunos rectángulos. (coordenadas de las esquina inferior derecha y superior izquierda)" Luego se veían k tuplas de cuatro enteros. Finalmente decía: "Luego de tener el cuadrado coloreado de negro en las secciones pertinentes, su tarea es invertir el cuadrado a su estado original. En una operación puede seleccionar un rectángulo y pintar todas sus casillas de blanco. El costo de pintar de blanco un rectángulo de  es el mínimo entre h y w. Encuentre el costo mínimo para pintar de blanco todo el cuadrado."
 
-- Si a una lista balanceada, se le agrega un Josué al principio y un Karel al final, el resultado sigue estando balanceado.
+En unos 10 minutos David fue capaz de resolver el problema. Desgraciadamente esto no es una película y el problema de David no era un problema del milenio que lo volviera millonario. Pero ¿Sería usted capaz de resolverlo también?
 
-- La concatenación de dos listas de Josués y Karel balanceadas es también una lista de Josués y Karel balanceada.
+#### Resumen:
 
-Ayude a Alejandra (a perder el tiempo) con su proceso. Dadas dos listas de Josués y Karel cualesquiera, encuentre la menor lista tal que las dos primeras son sublistas no necesariamente continuas de esta y además está balanceada.
+Dada una matriz de n x n cuadraditos. Se tienen k tuplas de números de la forma:
 
-**Resumen**
-
-Dadas dos cadenas str1,str2 paréntesis, se quiere formar otra tal que cumpla:
-
-- Debe estar balanceada.
-
-- Debe ser de tamaño mínimo.
-
-- Debe contener a str1, str2 como subsecuencias.
+(x_1,y_1 ; x_2,y_2) que representan las coordenadas de dos puntos, esquina inferior drecha y esquina superior izquierda, que resperesentan rectángulos que se pintaron de negro. El objetivo es volver la matriz de colo blanco totalmente de modo que cueste lo menor posible, y el costo de pintar de blanco un rectángulo es el min(h,w).
