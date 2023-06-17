@@ -1,6 +1,4 @@
-### 
-
-# Problem 2: Problema en la pizarra.
+# Problem 3: Tito quita y pon.
 
 #### Rainel Fernández Abreu C412
 
@@ -8,12 +6,27 @@
 
 ## El problema:
 
-Un día iba David por su facultad cuando ve un cuadrado formado por  cuadraditos de color blanco. A su lado, un mensaje ponía lo siguiente: "Las siguientes tuplas de la forma x1 , y1 , x2 , y2 son coordenadas para pintar de negro algunos rectángulos. (coordenadas de las esquina inferior derecha y superior izquierda)" Luego se veían k tuplas de cuatro enteros. Finalmente decía: "Luego de tener el cuadrado coloreado de negro en las secciones pertinentes, su tarea es invertir el cuadrado a su estado original. En una operación puede seleccionar un rectángulo y pintar todas sus casillas de blanco. El costo de pintar de blanco un rectángulo de  es el mínimo entre h y w. Encuentre el costo mínimo para pintar de blanco todo el cuadrado."
+Tito cayó en arresto domiciliario tras ser vinculado a una serie de negocios turbios. Tras días de encierro llegó a un punto en el que estaba absolutamente aburrido. De pronto, encontró un pequeño juego de mesa que, según la cubierta, se llamaba "Quita y pon". El juego contaba con una colección de cajitas. Cada cajita tenía 3 agujeros de colores. Habían k colores distintos. Además tenía con una bolsa con de pelotas, cada una con el tamaño exacto para rellenar un agujero. La cantidad de pelotas era suficiente para rellenar todos los agujeros.
 
-En unos 10 minutos David fue capaz de resolver el problema. Desgraciadamente esto no es una película y el problema de David no era un problema del milenio que lo volviera millonario. Pero ¿Sería usted capaz de resolverlo también?
+Al inicio del juego, algunos agujeros están llenos con su pelota correspondiente. Tito puede quitar o poner pelotas en los agujeros siempre que cumpla con que si interactúa con un agujero de color 
+, debe interactuar con todos los agujeros de ese mismo color en todas las cajas existentes. Se entiende interactuar como quitar (agujero lleno) o poner una pelota (agujero vacío). El objetivo del juego es encontrar si existe un conjunto de interacciones que, luego de ejecutadas resulten en que todas las cajas tengan al menos un agujero lleno y al menos un agujero vacío.
 
-#### Resumen:
+**Resumen:**
 
-Dada una matriz de n x n cuadraditos. Se tienen k tuplas de números de la forma:
+Se tienen un conjunto de cajitas, las cuales tienen exactamente 3 agujeros de colores, con k colores. Se quiere determinar si existe un conjunto de interacciones tales que luego de realizadas resulte que cada caja tenga un agujero vacio y uno lleno con la pelota correspondiente, donde interactuar es colocar o quitar una pelota de algún hueco de la caja.
 
-(x_1,y_1 ; x_2,y_2) que representan las coordenadas de dos puntos, esquina inferior drecha y esquina superior izquierda, que resperesentan rectángulos que se pintaron de negro. El objetivo es volver la matriz de colo blanco totalmente de modo que cueste lo menor posible, y el costo de pintar de blanco un rectángulo es el min(h,w).
+**Solución:**
+
+Por la descripción del problema y luego de haber asistido a las clases de DAA, se puede pensar que el problema tiene características donde coincide con el problema `3-sat`.  **SAT** fue el primer problema identificado como perteneciente a la clase de complejidad NP-C. El SAT sigue siendo NP-completo incluso si todas las fórmulas están en forma normal conjuntiva FNC con 3 variables por cláusula (3SAT-FNC) creando el problema (3SAT), o aun en el caso de que solo se permita un único valor verdadero en cada cláusula (3SAT en 1).
+
+Para probar que nuestro probema es NP-C, que es uno de los objetivos de este proyecto vamos a seguir una serie de pasos con la mayor formalidad posible.
+
+1. Probar que L \in NP
+
+2. Seleccionar un problema NPC conocido.
+
+3. Describir un algortimo que compute una función f la cual debe mapear para cada instancia x \in \{ 0,1\}^* de L^{'} a una instancia f(x) de L.
+
+4. Probar la correctitud de dicha función.
+
+5. Probar que este algoritmo que computa f se resuelve en tiempo polinomial.
